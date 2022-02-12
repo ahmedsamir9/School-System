@@ -9,8 +9,4 @@ public class AdminRoom : Room {
     public AdminRoom() {
     }
 
-    public override string? ToString()
-    {
-        return base.ToString();
-    }
 }

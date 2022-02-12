@@ -9,15 +9,10 @@ public class Department {
     public Department() {
     }
 
-    protected string name;
+    public string Name { get; set; }
 
-    protected int deptNo;
+    public int DepartMentNum { get; set; }
 
-
-
-
-
-
-
+    public List<Instructor> Instructors { get; set; } = new List<Instructor>();
 
 }

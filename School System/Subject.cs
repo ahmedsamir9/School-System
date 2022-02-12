@@ -19,6 +19,6 @@ public class Subject
 
     public override string? ToString()
     {
-        return base.ToString();
+        return $"the Course Name is {Name} , the Course Code is {Code} and the Total grade is {TotalGrade}";
     }
 }

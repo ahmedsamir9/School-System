@@ -10,28 +10,11 @@ public class Staff : Person
     public Staff()
     {
     }
+    public double Salary { get; set; }
+    public int OfficeHours { get; set; }
 
-    protected int salary;
-
-    protected int officeHours;
-
-
-    /// <summary>
-    /// @return
-    /// </summary>
-    public int getSalary()
+    public override string? ToString()
     {
-        // TODO implement here
-        return 0;
+        return $"the data of {this.GetType().Name}  :" + base.ToString() + $"\nSalary is {Salary}\n office hours is {OfficeHours}";
     }
-
-    /// <summary>
-    /// @param int 
-    /// @return
-    /// </summary>
-    public void setSalary(int sal)
-    {
-        // TODO implement here
-    }
-
 }

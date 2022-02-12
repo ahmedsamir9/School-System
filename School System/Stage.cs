@@ -12,8 +12,11 @@ public class Stage
     }
 
 
-    protected int level;
+    public int Level { get; set; }
 
+    public string Name { get; set; }
 
+    public List<Subject> Subjects { get; set; } = new List<Subject>();
+    public List<Student> Students { get; set; } = new List<Student>();
 
 }

@@ -18,6 +18,6 @@ public abstract class Person
 
     public override string? ToString()
     {
-        return base.ToString();
+        return $"The Name is {Name}\nthe Age {Age}\nthe ID :{Id}";
     }
 }

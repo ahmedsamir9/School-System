@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Class : Room {
+public class ClassRoom : Room {
 
-    public Class() {
+    public ClassRoom() {
     }
-
+    public List<Student> Students {get; set;} = new List<Student>();
 }

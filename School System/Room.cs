@@ -16,6 +16,6 @@ public class Room
 
     public override string? ToString()
     {
-        return base.ToString();
+        return $"the Room Type {this.GetType().Name} \nThe Room Number {RoomNum} \nThe Room Name {RoomName}";
     }
 }
