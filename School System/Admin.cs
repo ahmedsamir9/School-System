@@ -3,40 +3,58 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using School_System;
 public class Admin : Staff
 {
-
-    public Admin()
+    
+    public Admin(StudentRepo _studentRepo)
     {
+        this.StudentRepo = _studentRepo;
     }
+    private StudentRepo StudentRepo;
+    private InstructorRepo InstructorRepo;
 
-
-    /// <summary>
-    /// @param Student 
-    /// @return
-    /// </summary>
     public void addStudent(Student s)
     {
-        // TODO implement here
+        if (StudentRepo.Add(s)) {
+            Console.WriteLine("added Succuessfully");        
+        }
+        else
+        {
+            Console.WriteLine("Error");
+        }
     }
 
-    /// <summary>
-    /// @param Student 
-    /// @return
-    /// </summary>
-    public void removeStudent(Student s)
+
+    public void removeStudentById(int id)
     {
-        // TODO implement here
+        if (StudentRepo.Delete(id))
+        {
+            Console.WriteLine("deleted Succuessfully");
+        }
+        else
+        {
+            Console.WriteLine("Error");
+        }
     }
 
-    /// <summary>
-    /// @param int id 
-    /// @return
-    /// </summary>
-    public void updateStudent(int id)
+    public void updateStudent(Student s)
     {
-        // TODO implement here
+        if (StudentRepo.Upadate(s))
+        {
+            Console.WriteLine("Update Succuessfully");
+        }
+        else
+        {
+            Console.WriteLine("Error");
+        }
+    }
+    public void getStudent()
+    {
+        foreach (var studnet in StudentRepo.Get()) {
+
+            Console.WriteLine(studnet);
+        }
     }
 
     /// <summary>
@@ -45,10 +63,59 @@ public class Admin : Staff
     /// </summary>
     public Student searchStudent(int id)
     {
-        // TODO implement here
-        return new Student();
+        return StudentRepo.Find(X=> X.Id == id); 
     }
 
+    public void addInstructor(Instructor i)
+    {
+        if (InstructorRepo.Add(i))
+        {
+            Console.WriteLine("added Succuessfully");
+        }
+        else
+        {
+            Console.WriteLine("Error");
+        }
+    }
+
+
+    public void removeInstructorById(int id)
+    {
+        if (InstructorRepo.Delete(id))
+        {
+            Console.WriteLine("deleted Succuessfully");
+        }
+        else
+        {
+            Console.WriteLine("Error");
+        }
+    }
+
+    public void updateInstructor(Instructor i)
+    {
+        if (InstructorRepo.Upadate(i))
+        {
+            Console.WriteLine("Update Succuessfully");
+        }
+        else
+        {
+            Console.WriteLine("Error");
+        }
+    }
+    public void getInstructor()
+    {
+        foreach (var instructor in InstructorRepo.Get())
+        {
+
+            Console.WriteLine(instructor);
+        }
+    }
+
+   
+    public Instructor searchInstructor(int id)
+    {
+        return InstructorRepo.Find(X => X.Id == id);
+    }
     /// <summary>
     /// @param Department 
     /// @return
@@ -85,42 +152,6 @@ public class Admin : Staff
         return null;
     }
 
-    /// <summary>
-    /// @param Instructor 
-    /// @return
-    /// </summary>
-    public void addInstructor(Instructor ins)
-    {
-        // TODO implement here
-
-    }
-
-    /// <summary>
-    /// @param Instructor 
-    /// @return
-    /// </summary>
-    public void removeInstructor(Instructor ins)
-    {
-        // TODO implement here
-    }
-
-    /// <summary>
-    /// @param int id 
-    /// @return
-    /// </summary>
-    public void updateInstructor(int id)
-    {
-        // TODO implement here
-    }
-
-    /// <summary>
-    /// @param int id 
-    /// @return
-    /// </summary>
-    public Instructor searchInstructor(int id)
-    {
-  
-        return null;
-    }
+   
 
 }
