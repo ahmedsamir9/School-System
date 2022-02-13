@@ -21,7 +21,7 @@ namespace School_System
             fillStudentList();
             fillSubjectList();
             fillInstructorList();
-          
+            fillDepartmentList();
             fillStageList();
 
         }
@@ -30,6 +30,7 @@ namespace School_System
         public static TeacherRoom TeacherRooms;
         public static List<Stage> Stages;
         public static List<Subject> Subjects;
+        public static List<Department> Departments;
         #region fill Lists with Data 
         private static void fillStudentList()
         {
@@ -139,6 +140,7 @@ namespace School_System
             s3.teachedSubjects.Add(Subjects.ElementAt(2));
             s4.teachedSubjects.Add(Subjects.ElementAt(3));
             s5.teachedSubjects.Add(Subjects.ElementAt(4));
+            s5.teachedSubjects.Add(Subjects.ElementAt(0));
             Instructors.Add(s1);
             Instructors.Add(s2);
             Instructors.Add(s3);
@@ -193,7 +195,34 @@ namespace School_System
             Stages.Add(new Stage() { Name = "Ola", Level = 1, Students = Students.Take(3).ToList(), Subjects = Subjects.Take(3).ToList() });
             Stages.Add(new Stage() { Name = "tanya", Level = 2, Students = Students.Skip(3).ToList(), Subjects = Subjects.Skip(3).ToList() });
         }
-        #endregion
+        private static void fillDepartmentList()
+        {
+            var d1 = new Department()
+            {
+                DepartMentNum = 1,
+                Name = "lang Dep"
+            };
+            d1.Instructors.Add(Instructors.ElementAt(0));
+            d1.Instructors.Add(Instructors.ElementAt(4));
+            var d2 = new Department()
+            {
+                DepartMentNum = 2,
+                Name = "Math Dep"
+            };
+            d2.Instructors.Add(Instructors.ElementAt(1));
+            d2.Instructors.Add(Instructors.ElementAt(2));
+            var d3 = new Department()
+            {
+                DepartMentNum = 3,
+                Name = "Sci Dep"
+            };
+            d3.Instructors.Add(Instructors.ElementAt(3));
+            Departments.Add(d1);
+            Departments.Add(d2);
+            Departments.Add(d3);
+        }
+            #endregion
 
+        
     }
 }

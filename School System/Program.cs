@@ -9,13 +9,15 @@ var admin = new Admin(studentRepo)
     Salary = 25_0000
 };
 var adminRoom = new AdminRoom() { OurAdmin = admin };
-admin.getStudent();
-admin.updateStudent(new Student()
-            {
-                Name = "ali"
-                , Age = 13
-                ,GPA = 2, 
-                Id = 1
-            });
-admin.removeStudentById(2);
-admin.getStudent();
+void StartSystem() {
+    Console.WriteLine("Hello our remarkable admin ");
+    do
+    {
+        Console.WriteLine("1- work with Studnet data ");
+        Console.WriteLine("2- work with Department data ");
+        Console.WriteLine("3- work with Studnet data ");
+        Console.WriteLine("4- work with Studnet data ");
+
+    }
+
+}
