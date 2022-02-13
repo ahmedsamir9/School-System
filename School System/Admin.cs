@@ -6,6 +6,7 @@ using System.Text;
 using School_System;
 public class Admin : Staff
 {
+
     public Admin() { }
     public Admin(StudentRepo _studentRepo , InstructorRepo inss ,SubjectRepo subb ,DepartmentRepo dep)
     {
@@ -13,9 +14,10 @@ public class Admin : Staff
         InstructorRepo = inss;
         SubjectRepo = subb;
         depRepo = dep;
+
     }
     private IRpository<Student> StudentRepo;
-    private IRpository<Instructor> InstructorRepo;
+    private IRpository<Instructor>InstructorRepo ;
     private IRpository<Subject> SubjectRepo;
     private IRpository<Department> depRepo;
     public void addStudent(Student s)

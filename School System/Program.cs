@@ -1,9 +1,14 @@
 ﻿using School_System;
 var studentRepo = new StudentRepo();
+
 var insRepo = new InstructorRepo();
 var subRepo = new SubjectRepo();
 var depRepo = new DepartmentRepo();
 var admin = new Admin(studentRepo,insRepo,subRepo,depRepo)
+
+var admin = new Admin(studentRepo,ins,
+ subjectRepo,depRepo)
+
 {
     Id = 1,
     Age = 24,
@@ -255,6 +260,7 @@ void ManageInstructor()
                 }
                 i1.Id = id;
 
+
                 Console.WriteLine("enter age:");
                 while (!Int32.TryParse(Console.ReadLine(), out age))
                 {
@@ -486,3 +492,6 @@ while (showMenu)
 {
     showMenu = MainMenu();
 }
+
+}
+
