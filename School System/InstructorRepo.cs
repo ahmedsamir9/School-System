@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace School_System
 {
-    internal class InstructorRepo : IRpository<Instructor>
+    public class InstructorRepo : IRpository<Instructor>
     {
         public bool Add(Instructor entity)
         {

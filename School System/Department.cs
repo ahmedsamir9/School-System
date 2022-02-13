@@ -21,4 +21,9 @@ public class Department {
                Name == department.Name &&
                DepartMentNum == department.DepartMentNum;
     }
+
+    public override string? ToString()
+    {
+        return $"dep num {DepartMentNum} ,dep name {Name}";
+    }
 }

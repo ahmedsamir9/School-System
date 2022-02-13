@@ -6,15 +6,14 @@ using System.Text;
 using School_System;
 public class Admin : Staff
 {
-    
-    public Admin(StudentRepo _studentRepo
-,IRpository<Instructor> ins,
-IRpository<Subject> _SubjectRepo,IRpository<Department> dep)
+
+    public Admin() { }
+    public Admin(StudentRepo _studentRepo , InstructorRepo inss ,SubjectRepo subb ,DepartmentRepo dep)
     {
         this.StudentRepo = _studentRepo;
-InstructorRepo = ins ;
-SubjectRepo = _SubjectRepo;
-depRepo = dep;
+        InstructorRepo = inss;
+        SubjectRepo = subb;
+        depRepo = dep;
 
     }
     private IRpository<Student> StudentRepo;
