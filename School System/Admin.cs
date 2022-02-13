@@ -7,12 +7,18 @@ using School_System;
 public class Admin : Staff
 {
     
-    public Admin(StudentRepo _studentRepo)
+    public Admin(StudentRepo _studentRepo
+,IRpository<Instructor> ins,
+IRpository<Subject> _SubjectRepo,IRpository<Department> dep)
     {
         this.StudentRepo = _studentRepo;
+InstructorRepo = ins ;
+SubjectRepo = _SubjectRepo;
+depRepo = dep;
+
     }
     private IRpository<Student> StudentRepo;
-    private IRpository<Instructor> InstructorRepo;
+    private IRpository<Instructor>InstructorRepo ;
     private IRpository<Subject> SubjectRepo;
     private IRpository<Department> depRepo;
     public void addStudent(Student s)
