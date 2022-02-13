@@ -11,9 +11,10 @@ public class Admin : Staff
     {
         this.StudentRepo = _studentRepo;
     }
-    private StudentRepo StudentRepo;
-    private InstructorRepo InstructorRepo;
-
+    private IRpository<Student> StudentRepo;
+    private IRpository<Instructor> InstructorRepo;
+    private IRpository<Subject> SubjectRepo;
+    private IRpository<Department> depRepo;
     public void addStudent(Student s)
     {
         if (StudentRepo.Add(s)) {
@@ -57,10 +58,7 @@ public class Admin : Staff
         }
     }
 
-    /// <summary>
-    /// @param int id 
-    /// @return
-    /// </summary>
+ 
     public Student searchStudent(int id)
     {
         return StudentRepo.Find(X=> X.Id == id); 
@@ -110,48 +108,107 @@ public class Admin : Staff
             Console.WriteLine(instructor);
         }
     }
+    public void addSubject(Subject s)
+    {
+        if (SubjectRepo.Add(s))
+        {
+            Console.WriteLine("added Succuessfully");
+        }
+        else
+        {
+            Console.WriteLine("Error");
+        }
+    }
 
-   
+
+    public void removeSubjectByCode(int code)
+    {
+        if (SubjectRepo.Delete(code))
+        {
+            Console.WriteLine("deleted Succuessfully");
+        }
+        else
+        {
+            Console.WriteLine("Error");
+        }
+    }
+
+    public void updateSubject(Subject s)
+    {
+        if (SubjectRepo.Upadate(s))
+        {
+            Console.WriteLine("Update Succuessfully");
+        }
+        else
+        {
+            Console.WriteLine("Error");
+        }
+    }
+    public void getSubject()
+    {
+        foreach (var subject in SubjectRepo.Get())
+        {
+
+            Console.WriteLine(subject);
+        }
+    }
+    public Subject searchSubject(int code)
+    {
+        return SubjectRepo.Find(X => X.Code == code);
+    }
     public Instructor searchInstructor(int id)
     {
         return InstructorRepo.Find(X => X.Id == id);
     }
-    /// <summary>
-    /// @param Department 
-    /// @return
-    /// </summary>
-    public void addDepartment(Department dep)
+
+    public void addDep(Department d)
     {
-        // TODO implement here
+        if (depRepo.Add(d))
+        {
+            Console.WriteLine("added Succuessfully");
+        }
+        else
+        {
+            Console.WriteLine("Error");
+        }
     }
 
-    /// <summary>
-    /// @param Department 
-    /// @return
-    /// </summary>
-    public void removeDepartment(Department d)
+
+    public void removeDepartmentByCode(int code)
     {
-        // TODO implement here
+        if (depRepo.Delete(code))
+        {
+            Console.WriteLine("deleted Succuessfully");
+        }
+        else
+        {
+            Console.WriteLine("Error");
+        }
     }
 
-    /// <summary>
-    /// @return
-    /// </summary>
-    public void updateDepartment()
+    public void updateDepartment(Department d)
     {
-        // TODO implement here
+        if (depRepo.Upadate(d))
+        {
+            Console.WriteLine("Update Succuessfully");
+        }
+        else
+        {
+            Console.WriteLine("Error");
+        }
+    }
+    public void getDepartment()
+    {
+        foreach (var dep in depRepo.Get())
+        {
+
+            Console.WriteLine(dep);
+        }
+    }
+    public Department searchDepartment(int code)
+    {
+        return depRepo.Find(X => X.DepartMentNum == code);
     }
 
-    /// <summary>
-    /// @param int 
-    /// @return
-    /// </summary>
-    public Department searchDepartment(int i)
-    {
-        // TODO implement here
-        return null;
-    }
-
-   
 
 }

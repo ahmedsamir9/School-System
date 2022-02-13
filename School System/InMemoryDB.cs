@@ -19,8 +19,9 @@ namespace School_System
             Stages = new List<Stage>();
             Subjects = new List<Subject>();
             fillStudentList();
-            fillInstructorList();
             fillSubjectList();
+            fillInstructorList();
+          
             fillStageList();
 
         }
@@ -91,6 +92,7 @@ namespace School_System
                 Salary = 45.3,
                 OfficeHours = 2,
                 Id = 1
+               
             };
             var s2 = new Instructor()
             {
@@ -132,6 +134,11 @@ namespace School_System
                 OfficeHours = 2,
                 Id = 6
             };
+            s1.teachedSubjects.Add(Subjects.ElementAt(0));
+            s2.teachedSubjects.Add(Subjects.ElementAt(1));
+            s3.teachedSubjects.Add(Subjects.ElementAt(2));
+            s4.teachedSubjects.Add(Subjects.ElementAt(3));
+            s5.teachedSubjects.Add(Subjects.ElementAt(4));
             Instructors.Add(s1);
             Instructors.Add(s2);
             Instructors.Add(s3);
