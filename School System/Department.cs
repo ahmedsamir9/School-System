@@ -15,4 +15,10 @@ public class Department {
 
     public List<Instructor> Instructors { get; set; } = new List<Instructor>();
 
+    public override bool Equals(object? obj)
+    {
+        return obj is Department department &&
+               Name == department.Name &&
+               DepartMentNum == department.DepartMentNum;
+    }
 }
