@@ -18,6 +18,7 @@ namespace School_System
             };
             Stages = new List<Stage>();
             Subjects = new List<Subject>();
+            Departments = new List<Department>();
             fillStudentList();
             fillSubjectList();
             fillInstructorList();
