@@ -1,6 +1,10 @@
 ﻿using School_System;
 var studentRepo = new StudentRepo();
-var admin = new Admin(studentRepo)
+Var insRepo = new InstructorRepo(); 
+Var subjectRepo = nee SubjectRepo ();
+Var depRepo = new DepartmentRepo ();
+var admin = new Admin(studentRepo,ins,
+ subjectRepo,depRepo)
 {
     Id = 1,
     Age = 24,
